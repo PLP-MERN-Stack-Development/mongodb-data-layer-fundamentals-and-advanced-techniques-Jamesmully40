@@ -1,59 +1,38 @@
-# MongoDB Fundamentals - Week 1
+# MongoDB Data Layer Fundamentals
 
-## Setup Instructions
+This repository contains the solution for the Week 1 MongoDB assignment.
 
-Before you begin this assignment, please make sure you have the following installed:
+## Files
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+- `insert_books.js`: Script to populate the `plp_bookstore` database with sample book data.
+- `queries.js`: Script containing all the queries required for Tasks 2, 3, 4, and 5 (CRUD, Advanced Queries, Aggregation, Indexing).
 
-### Node.js Package Setup
+## Setup & Usage
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+1. **Prerequisites**: Ensure MongoDB is installed and running. You should have `mongosh` (MongoDB Shell) available in your terminal.
 
-```bash
-# Initialize a package.json file
-npm init -y
+2. **Populate Database**:
+   Run the following command to create the database and insert the books:
+   ```bash
+   mongosh plp_bookstore insert_books.js
+   ```
+   *Output should confirm: "Database seeded successfully with 15 books."*
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+3. **Run Queries**:
+   Run the queries script to execute all tasks and see the output:
+   ```bash
+   mongosh plp_bookstore queries.js
+   ```
+   This script will output the results for:
+   - Basic CRUD operations
+   - Advanced filtering, sorting, and pagination
+   - Aggregation pipelines (Average price, Author stats, Decades)
+   - Index creation and performance explanation
 
-## Assignment Overview
+## Task Details
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
-
-## Submission
-
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+- **Task 1**: Database `plp_bookstore` and collection `books` are created automatically by the insertion script.
+- **Task 2**: CRUD operations are demonstrated in the first section of `queries.js`.
+- **Task 3**: Advanced queries including stock checks, projection, sorting, and pagination are in the second section.
+- **Task 4**: Aggregation pipelines for analytics are in the third section.
+- **Task 5**: Indexes are created on `title` and compound index on `author` + `published_year`. `explain()` is used to show index usage.
