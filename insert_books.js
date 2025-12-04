@@ -133,7 +133,159 @@ const books = [
     publisher: 'Thomas Cautley Newby'
   }
 ];
-
+// Insert 15 books
+db.books.insertMany([
+    {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        genre: "Classic",
+        published_year: 1925,
+        price: 10.99,
+        in_stock: true,
+        pages: 180,
+        publisher: "Scribner"
+    },
+    {
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        genre: "Classic",
+        published_year: 1960,
+        price: 12.50,
+        in_stock: true,
+        pages: 281,
+        publisher: "J.B. Lippincott & Co."
+    },
+    {
+        title: "1984",
+        author: "George Orwell",
+        genre: "Dystopian",
+        published_year: 1949,
+        price: 15.00,
+        in_stock: true,
+        pages: 328,
+        publisher: "Secker & Warburg"
+    },
+    {
+        title: "The Catcher in the Rye",
+        author: "J.D. Salinger",
+        genre: "Classic",
+        published_year: 1951,
+        price: 9.99,
+        in_stock: false,
+        pages: 277,
+        publisher: "Little, Brown and Company"
+    },
+    {
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        genre: "Fantasy",
+        published_year: 1937,
+        price: 14.95,
+        in_stock: true,
+        pages: 310,
+        publisher: "George Allen & Unwin"
+    },
+    {
+        title: "Harry Potter and the Sorcerer's Stone",
+        author: "J.K. Rowling",
+        genre: "Fantasy",
+        published_year: 1997,
+        price: 19.99,
+        in_stock: true,
+        pages: 309,
+        publisher: "Bloomsbury"
+    },
+    {
+        title: "The Da Vinci Code",
+        author: "Dan Brown",
+        genre: "Thriller",
+        published_year: 2003,
+        price: 16.00,
+        in_stock: true,
+        pages: 454,
+        publisher: "Doubleday"
+    },
+    {
+        title: "The Hunger Games",
+        author: "Suzanne Collins",
+        genre: "Dystopian",
+        published_year: 2008,
+        price: 11.50,
+        in_stock: true,
+        pages: 374,
+        publisher: "Scholastic"
+    },
+    {
+        title: "Gone Girl",
+        author: "Gillian Flynn",
+        genre: "Thriller",
+        published_year: 2012,
+        price: 13.00,
+        in_stock: true,
+        pages: 415,
+        publisher: "Crown Publishing Group"
+    },
+    {
+        title: "The Girl on the Train",
+        author: "Paula Hawkins",
+        genre: "Thriller",
+        published_year: 2015,
+        price: 12.00,
+        in_stock: false,
+        pages: 323,
+        publisher: "Riverhead Books"
+    },
+    {
+        title: "A Game of Thrones",
+        author: "George R.R. Martin",
+        genre: "Fantasy",
+        published_year: 1996,
+        price: 22.00,
+        in_stock: true,
+        pages: 694,
+        publisher: "Bantam Books"
+    },
+    {
+        title: "The Martian",
+        author: "Andy Weir",
+        genre: "Sci-Fi",
+        published_year: 2011,
+        price: 14.00,
+        in_stock: true,
+        pages: 369,
+        publisher: "Crown Publishing Group"
+    },
+    {
+        title: "Dune",
+        author: "Frank Herbert",
+        genre: "Sci-Fi",
+        published_year: 1965,
+        price: 18.00,
+        in_stock: true,
+        pages: 412,
+        publisher: "Chilton Books"
+    },
+    {
+        title: "Project Hail Mary",
+        author: "Andy Weir",
+        genre: "Sci-Fi",
+        published_year: 2021,
+        price: 20.00,
+        in_stock: true,
+        pages: 496,
+        publisher: "Ballantine Books"
+    },
+    {
+        title: "Becoming",
+        author: "Michelle Obama",
+        genre: "Biography",
+        published_year: 2018,
+        price: 25.00,
+        in_stock: true,
+        pages: 448,
+        publisher: "Crown"
+    }
+]);
 // Function to insert books into MongoDB
 async function insertBooks() {
   const client = new MongoClient(uri);
@@ -191,7 +343,7 @@ insertBooks().catch(console.error);
  *    db.books.find({ published_year: { $gt: 1950 } })
  *
  * 4. Find books in a specific genre:
- *    db.books.find({ genre: "Fiction" })
+ *    db.books.find({ genre: " Fiction" })
  *
  * 5. Find in-stock books:
  *    db.books.find({ in_stock: true })
